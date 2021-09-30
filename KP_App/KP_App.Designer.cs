@@ -35,6 +35,7 @@ namespace KP_App
             this.WorkspaceName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.excelExportButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.calculateTotalPaymentByWorkspace = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@ namespace KP_App
             this.label2 = new System.Windows.Forms.Label();
             this.totalPaymentTextBox = new System.Windows.Forms.TextBox();
             this.deleteSelectedRowButton = new System.Windows.Forms.Button();
-            this.excelExportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -55,6 +55,7 @@ namespace KP_App
             // 
             // mainDataGridView
             // 
+            this.mainDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.mainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mainDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -74,14 +75,12 @@ namespace KP_App
             this.ID.HeaderText = "Табельный №";
             this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
-            this.ID.Width = 125;
             // 
             // Surname
             // 
             this.Surname.HeaderText = "Фамилия";
             this.Surname.MinimumWidth = 6;
             this.Surname.Name = "Surname";
-            this.Surname.Width = 125;
             // 
             // WorkspaceName
             // 
@@ -96,14 +95,12 @@ namespace KP_App
             this.WorkspaceName.Name = "WorkspaceName";
             this.WorkspaceName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.WorkspaceName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.WorkspaceName.Width = 125;
             // 
             // Payment
             // 
             this.Payment.HeaderText = "Заработная плата";
             this.Payment.MinimumWidth = 6;
             this.Payment.Name = "Payment";
-            this.Payment.Width = 125;
             // 
             // splitContainer1
             // 
@@ -124,6 +121,16 @@ namespace KP_App
             this.splitContainer1.Size = new System.Drawing.Size(707, 630);
             this.splitContainer1.SplitterDistance = 395;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // excelExportButton
+            // 
+            this.excelExportButton.Location = new System.Drawing.Point(428, 140);
+            this.excelExportButton.Name = "excelExportButton";
+            this.excelExportButton.Size = new System.Drawing.Size(251, 36);
+            this.excelExportButton.TabIndex = 9;
+            this.excelExportButton.Text = "Экспорт в Excel";
+            this.excelExportButton.UseVisualStyleBackColor = true;
+            this.excelExportButton.Click += new System.EventHandler(this.excelExportButton_Click);
             // 
             // groupBox1
             // 
@@ -218,16 +225,6 @@ namespace KP_App
             this.deleteSelectedRowButton.Text = "Удалить выбранный ряд";
             this.deleteSelectedRowButton.UseVisualStyleBackColor = false;
             this.deleteSelectedRowButton.Click += new System.EventHandler(this.deleteSelectedRowButton_Click);
-            // 
-            // excelExportButton
-            // 
-            this.excelExportButton.Location = new System.Drawing.Point(428, 140);
-            this.excelExportButton.Name = "excelExportButton";
-            this.excelExportButton.Size = new System.Drawing.Size(251, 36);
-            this.excelExportButton.TabIndex = 9;
-            this.excelExportButton.Text = "Экспорт в Excel";
-            this.excelExportButton.UseVisualStyleBackColor = true;
-            this.excelExportButton.Click += new System.EventHandler(this.excelExportButton_Click);
             // 
             // KP_App
             // 

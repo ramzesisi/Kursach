@@ -61,7 +61,7 @@ namespace KP_App
             appExcel.Visible = true;
             worksheetExcel = workBookExcel.Sheets[1];
             worksheetExcel = workBookExcel.ActiveSheet;
-            worksheetExcel.Name = "Экспортировано из приложения";
+            worksheetExcel.Name = "Таблица 1";
             //Копируем заголовки
             for (int i = 1; i < mainDataGridView.Columns.Count + 1; i++)
             {
