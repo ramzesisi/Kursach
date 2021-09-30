@@ -12,6 +12,8 @@ namespace KP_App
 {
     public partial class KP_App : Form
     {
+        private readonly string excelSavePath = @"E:\лабы и курсач\2 курс\ТРПО\Курсовой проект\KP_App";
+        //Проверка подключение гитхаба
         public KP_App()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace KP_App
 
         private void KP_App_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void deleteSelectedRowButton_Click(object sender, EventArgs e)
@@ -49,6 +51,34 @@ namespace KP_App
             averageMonthlyPayment = (double)totalMonthlyPayment / counter;
             totalPaymentTextBox.Text = totalMonthlyPayment.ToString();
             averageMonthPaymentTextBox.Text = averageMonthlyPayment.ToString();
+        }
+
+        private void excelExportButton_Click(object sender, EventArgs e)
+        {
+            Microsoft.Office.Interop.Excel.Application appExcel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook workBookExcel = appExcel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel.Worksheet worksheetExcel = null;
+            appExcel.Visible = true;
+            worksheetExcel = workBookExcel.Sheets[1];
+            worksheetExcel = workBookExcel.ActiveSheet;
+            worksheetExcel.Name = "Экспортировано из приложения";
+            //Копируем заголовки
+            for (int i = 1; i < mainDataGridView.Columns.Count + 1; i++)
+            {
+                worksheetExcel.Cells[1, i] = mainDataGridView.Columns[i - 1].HeaderText;
+            }
+            //Заполняем таблицу
+            for (int i = 0; i < mainDataGridView.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < mainDataGridView.Columns.Count; j++)
+                {
+                    worksheetExcel.Cells[i + 2, j + 1] = mainDataGridView.Rows[i].Cells[j].Value.ToString();
+                }
+            }
+            //Сохраняем
+            workBookExcel.SaveAs(excelSavePath, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+                Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+            appExcel.Quit();
         }
     }
 }

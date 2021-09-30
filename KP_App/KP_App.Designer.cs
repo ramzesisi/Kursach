@@ -30,24 +30,27 @@ namespace KP_App
         private void InitializeComponent()
         {
             this.mainDataGridView = new System.Windows.Forms.DataGridView();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.deleteSelectedRowButton = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkspaceName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.calculateTotalPaymentByWorkspace = new System.Windows.Forms.Button();
-            this.workspaceComboBox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.totalPaymentTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.workspaceComboBox = new System.Windows.Forms.ComboBox();
             this.averageMonthPaymentTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.totalPaymentTextBox = new System.Windows.Forms.TextBox();
+            this.deleteSelectedRowButton = new System.Windows.Forms.Button();
+            this.excelExportButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainDataGridView
@@ -65,41 +68,6 @@ namespace KP_App
             this.mainDataGridView.RowTemplate.Height = 24;
             this.mainDataGridView.Size = new System.Drawing.Size(707, 395);
             this.mainDataGridView.TabIndex = 0;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.mainDataGridView);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.label3);
-            this.splitContainer1.Panel2.Controls.Add(this.averageMonthPaymentTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.totalPaymentTextBox);
-            this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Controls.Add(this.workspaceComboBox);
-            this.splitContainer1.Panel2.Controls.Add(this.calculateTotalPaymentByWorkspace);
-            this.splitContainer1.Panel2.Controls.Add(this.deleteSelectedRowButton);
-            this.splitContainer1.Size = new System.Drawing.Size(707, 630);
-            this.splitContainer1.SplitterDistance = 395;
-            this.splitContainer1.TabIndex = 2;
-            // 
-            // deleteSelectedRowButton
-            // 
-            this.deleteSelectedRowButton.Location = new System.Drawing.Point(427, 30);
-            this.deleteSelectedRowButton.Name = "deleteSelectedRowButton";
-            this.deleteSelectedRowButton.Size = new System.Drawing.Size(251, 38);
-            this.deleteSelectedRowButton.TabIndex = 0;
-            this.deleteSelectedRowButton.Text = "Удалить выбранный ряд";
-            this.deleteSelectedRowButton.UseVisualStyleBackColor = true;
-            this.deleteSelectedRowButton.Click += new System.EventHandler(this.deleteSelectedRowButton_Click);
             // 
             // ID
             // 
@@ -137,15 +105,60 @@ namespace KP_App
             this.Payment.Name = "Payment";
             this.Payment.Width = 125;
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.mainDataGridView);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.excelExportButton);
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
+            this.splitContainer1.Panel2.Controls.Add(this.deleteSelectedRowButton);
+            this.splitContainer1.Size = new System.Drawing.Size(707, 630);
+            this.splitContainer1.SplitterDistance = 395;
+            this.splitContainer1.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.calculateTotalPaymentByWorkspace);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.workspaceComboBox);
+            this.groupBox1.Controls.Add(this.averageMonthPaymentTextBox);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.totalPaymentTextBox);
+            this.groupBox1.Location = new System.Drawing.Point(12, 15);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(313, 171);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Выплаты заработной платы";
+            // 
             // calculateTotalPaymentByWorkspace
             // 
-            this.calculateTotalPaymentByWorkspace.Location = new System.Drawing.Point(12, 63);
+            this.calculateTotalPaymentByWorkspace.Location = new System.Drawing.Point(6, 58);
             this.calculateTotalPaymentByWorkspace.Name = "calculateTotalPaymentByWorkspace";
             this.calculateTotalPaymentByWorkspace.Size = new System.Drawing.Size(302, 38);
             this.calculateTotalPaymentByWorkspace.TabIndex = 1;
             this.calculateTotalPaymentByWorkspace.Text = "Вычислиты выплаты по цеху";
             this.calculateTotalPaymentByWorkspace.UseVisualStyleBackColor = true;
             this.calculateTotalPaymentByWorkspace.Click += new System.EventHandler(this.calculateTotalPaymentByWorkspace_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 132);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(196, 17);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Среднемесячный заработок";
             // 
             // workspaceComboBox
             // 
@@ -156,53 +169,65 @@ namespace KP_App
             "Переработка отходов",
             "Сварочный",
             "Токарный"});
-            this.workspaceComboBox.Location = new System.Drawing.Point(193, 33);
+            this.workspaceComboBox.Location = new System.Drawing.Point(187, 28);
             this.workspaceComboBox.Name = "workspaceComboBox";
             this.workspaceComboBox.Size = new System.Drawing.Size(121, 24);
             this.workspaceComboBox.TabIndex = 2;
             // 
+            // averageMonthPaymentTextBox
+            // 
+            this.averageMonthPaymentTextBox.Location = new System.Drawing.Point(207, 132);
+            this.averageMonthPaymentTextBox.Name = "averageMonthPaymentTextBox";
+            this.averageMonthPaymentTextBox.ReadOnly = true;
+            this.averageMonthPaymentTextBox.Size = new System.Drawing.Size(100, 22);
+            this.averageMonthPaymentTextBox.TabIndex = 6;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(6, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Цех";
             // 
-            // totalPaymentTextBox
-            // 
-            this.totalPaymentTextBox.Location = new System.Drawing.Point(214, 112);
-            this.totalPaymentTextBox.Name = "totalPaymentTextBox";
-            this.totalPaymentTextBox.ReadOnly = true;
-            this.totalPaymentTextBox.Size = new System.Drawing.Size(100, 22);
-            this.totalPaymentTextBox.TabIndex = 4;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 112);
+            this.label2.Location = new System.Drawing.Point(6, 107);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Общая сумма выплат";
             // 
-            // label3
+            // totalPaymentTextBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 137);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(196, 17);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Среднемесячный заработок";
+            this.totalPaymentTextBox.Location = new System.Drawing.Point(207, 107);
+            this.totalPaymentTextBox.Name = "totalPaymentTextBox";
+            this.totalPaymentTextBox.ReadOnly = true;
+            this.totalPaymentTextBox.Size = new System.Drawing.Size(100, 22);
+            this.totalPaymentTextBox.TabIndex = 4;
             // 
-            // averageMonthPaymentTextBox
+            // deleteSelectedRowButton
             // 
-            this.averageMonthPaymentTextBox.Location = new System.Drawing.Point(214, 137);
-            this.averageMonthPaymentTextBox.Name = "averageMonthPaymentTextBox";
-            this.averageMonthPaymentTextBox.ReadOnly = true;
-            this.averageMonthPaymentTextBox.Size = new System.Drawing.Size(100, 22);
-            this.averageMonthPaymentTextBox.TabIndex = 6;
+            this.deleteSelectedRowButton.BackColor = System.Drawing.Color.Red;
+            this.deleteSelectedRowButton.Location = new System.Drawing.Point(428, 19);
+            this.deleteSelectedRowButton.Name = "deleteSelectedRowButton";
+            this.deleteSelectedRowButton.Size = new System.Drawing.Size(251, 36);
+            this.deleteSelectedRowButton.TabIndex = 0;
+            this.deleteSelectedRowButton.Text = "Удалить выбранный ряд";
+            this.deleteSelectedRowButton.UseVisualStyleBackColor = false;
+            this.deleteSelectedRowButton.Click += new System.EventHandler(this.deleteSelectedRowButton_Click);
+            // 
+            // excelExportButton
+            // 
+            this.excelExportButton.Location = new System.Drawing.Point(428, 140);
+            this.excelExportButton.Name = "excelExportButton";
+            this.excelExportButton.Size = new System.Drawing.Size(251, 36);
+            this.excelExportButton.TabIndex = 9;
+            this.excelExportButton.Text = "Экспорт в Excel";
+            this.excelExportButton.UseVisualStyleBackColor = true;
+            this.excelExportButton.Click += new System.EventHandler(this.excelExportButton_Click);
             // 
             // KP_App
             // 
@@ -216,9 +241,10 @@ namespace KP_App
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -239,6 +265,8 @@ namespace KP_App
         private System.Windows.Forms.TextBox averageMonthPaymentTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox totalPaymentTextBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button excelExportButton;
     }
 }
 
