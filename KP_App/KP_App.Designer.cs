@@ -124,16 +124,20 @@ namespace KP_App
             // 
             // excelExportButton
             // 
+            this.excelExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.excelExportButton.BackColor = System.Drawing.Color.Lime;
+            this.excelExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.excelExportButton.Location = new System.Drawing.Point(428, 140);
             this.excelExportButton.Name = "excelExportButton";
             this.excelExportButton.Size = new System.Drawing.Size(251, 36);
             this.excelExportButton.TabIndex = 9;
             this.excelExportButton.Text = "Экспорт в Excel";
-            this.excelExportButton.UseVisualStyleBackColor = true;
+            this.excelExportButton.UseVisualStyleBackColor = false;
             this.excelExportButton.Click += new System.EventHandler(this.excelExportButton_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.groupBox1.Controls.Add(this.calculateTotalPaymentByWorkspace);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.workspaceComboBox);
@@ -141,6 +145,7 @@ namespace KP_App
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.totalPaymentTextBox);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(12, 15);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(313, 171);
@@ -150,12 +155,14 @@ namespace KP_App
             // 
             // calculateTotalPaymentByWorkspace
             // 
+            this.calculateTotalPaymentByWorkspace.BackColor = System.Drawing.SystemColors.Highlight;
+            this.calculateTotalPaymentByWorkspace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.calculateTotalPaymentByWorkspace.Location = new System.Drawing.Point(6, 58);
             this.calculateTotalPaymentByWorkspace.Name = "calculateTotalPaymentByWorkspace";
             this.calculateTotalPaymentByWorkspace.Size = new System.Drawing.Size(302, 38);
             this.calculateTotalPaymentByWorkspace.TabIndex = 1;
             this.calculateTotalPaymentByWorkspace.Text = "Вычислиты выплаты по цеху";
-            this.calculateTotalPaymentByWorkspace.UseVisualStyleBackColor = true;
+            this.calculateTotalPaymentByWorkspace.UseVisualStyleBackColor = false;
             this.calculateTotalPaymentByWorkspace.Click += new System.EventHandler(this.calculateTotalPaymentByWorkspace_Click);
             // 
             // label3
@@ -217,7 +224,9 @@ namespace KP_App
             // 
             // deleteSelectedRowButton
             // 
+            this.deleteSelectedRowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteSelectedRowButton.BackColor = System.Drawing.Color.Red;
+            this.deleteSelectedRowButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.deleteSelectedRowButton.Location = new System.Drawing.Point(428, 19);
             this.deleteSelectedRowButton.Name = "deleteSelectedRowButton";
             this.deleteSelectedRowButton.Size = new System.Drawing.Size(251, 36);
@@ -232,6 +241,7 @@ namespace KP_App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 630);
             this.Controls.Add(this.splitContainer1);
+            this.MinimumSize = new System.Drawing.Size(725, 677);
             this.Name = "KP_App";
             this.Text = "Завод ";
             this.Load += new System.EventHandler(this.KP_App_Load);
