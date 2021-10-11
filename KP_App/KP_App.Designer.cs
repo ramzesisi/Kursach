@@ -45,12 +45,15 @@ namespace KP_App
             this.label2 = new System.Windows.Forms.Label();
             this.totalPaymentTextBox = new System.Windows.Forms.TextBox();
             this.deleteSelectedRowButton = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.increaseSalary = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainDataGridView
@@ -67,7 +70,7 @@ namespace KP_App
             this.mainDataGridView.Name = "mainDataGridView";
             this.mainDataGridView.RowHeadersWidth = 51;
             this.mainDataGridView.RowTemplate.Height = 24;
-            this.mainDataGridView.Size = new System.Drawing.Size(707, 395);
+            this.mainDataGridView.Size = new System.Drawing.Size(1054, 401);
             this.mainDataGridView.TabIndex = 0;
             // 
             // ID
@@ -115,11 +118,12 @@ namespace KP_App
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel2.Controls.Add(this.excelExportButton);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
             this.splitContainer1.Panel2.Controls.Add(this.deleteSelectedRowButton);
-            this.splitContainer1.Size = new System.Drawing.Size(707, 630);
-            this.splitContainer1.SplitterDistance = 395;
+            this.splitContainer1.Size = new System.Drawing.Size(1054, 640);
+            this.splitContainer1.SplitterDistance = 401;
             this.splitContainer1.TabIndex = 2;
             // 
             // excelExportButton
@@ -127,7 +131,7 @@ namespace KP_App
             this.excelExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.excelExportButton.BackColor = System.Drawing.Color.Lime;
             this.excelExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.excelExportButton.Location = new System.Drawing.Point(428, 140);
+            this.excelExportButton.Location = new System.Drawing.Point(775, 140);
             this.excelExportButton.Name = "excelExportButton";
             this.excelExportButton.Size = new System.Drawing.Size(251, 36);
             this.excelExportButton.TabIndex = 9;
@@ -148,7 +152,7 @@ namespace KP_App
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(12, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(313, 171);
+            this.groupBox1.Size = new System.Drawing.Size(373, 177);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выплаты заработной платы";
@@ -157,9 +161,9 @@ namespace KP_App
             // 
             this.calculateTotalPaymentByWorkspace.BackColor = System.Drawing.SystemColors.Highlight;
             this.calculateTotalPaymentByWorkspace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.calculateTotalPaymentByWorkspace.Location = new System.Drawing.Point(6, 58);
+            this.calculateTotalPaymentByWorkspace.Location = new System.Drawing.Point(9, 58);
             this.calculateTotalPaymentByWorkspace.Name = "calculateTotalPaymentByWorkspace";
-            this.calculateTotalPaymentByWorkspace.Size = new System.Drawing.Size(302, 38);
+            this.calculateTotalPaymentByWorkspace.Size = new System.Drawing.Size(337, 38);
             this.calculateTotalPaymentByWorkspace.TabIndex = 1;
             this.calculateTotalPaymentByWorkspace.Text = "Вычислиты выплаты по цеху";
             this.calculateTotalPaymentByWorkspace.UseVisualStyleBackColor = false;
@@ -168,7 +172,7 @@ namespace KP_App
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 132);
+            this.label3.Location = new System.Drawing.Point(5, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 17);
             this.label3.TabIndex = 7;
@@ -183,9 +187,9 @@ namespace KP_App
             "Переработка отходов",
             "Сварочный",
             "Токарный"});
-            this.workspaceComboBox.Location = new System.Drawing.Point(187, 28);
+            this.workspaceComboBox.Location = new System.Drawing.Point(207, 28);
             this.workspaceComboBox.Name = "workspaceComboBox";
-            this.workspaceComboBox.Size = new System.Drawing.Size(121, 24);
+            this.workspaceComboBox.Size = new System.Drawing.Size(139, 24);
             this.workspaceComboBox.TabIndex = 2;
             // 
             // averageMonthPaymentTextBox
@@ -193,13 +197,13 @@ namespace KP_App
             this.averageMonthPaymentTextBox.Location = new System.Drawing.Point(207, 132);
             this.averageMonthPaymentTextBox.Name = "averageMonthPaymentTextBox";
             this.averageMonthPaymentTextBox.ReadOnly = true;
-            this.averageMonthPaymentTextBox.Size = new System.Drawing.Size(100, 22);
+            this.averageMonthPaymentTextBox.Size = new System.Drawing.Size(139, 22);
             this.averageMonthPaymentTextBox.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Location = new System.Drawing.Point(6, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 17);
             this.label1.TabIndex = 3;
@@ -208,7 +212,7 @@ namespace KP_App
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 107);
+            this.label2.Location = new System.Drawing.Point(6, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 17);
             this.label2.TabIndex = 5;
@@ -219,7 +223,7 @@ namespace KP_App
             this.totalPaymentTextBox.Location = new System.Drawing.Point(207, 107);
             this.totalPaymentTextBox.Name = "totalPaymentTextBox";
             this.totalPaymentTextBox.ReadOnly = true;
-            this.totalPaymentTextBox.Size = new System.Drawing.Size(100, 22);
+            this.totalPaymentTextBox.Size = new System.Drawing.Size(139, 22);
             this.totalPaymentTextBox.TabIndex = 4;
             // 
             // deleteSelectedRowButton
@@ -227,7 +231,7 @@ namespace KP_App
             this.deleteSelectedRowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteSelectedRowButton.BackColor = System.Drawing.Color.Red;
             this.deleteSelectedRowButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteSelectedRowButton.Location = new System.Drawing.Point(428, 19);
+            this.deleteSelectedRowButton.Location = new System.Drawing.Point(775, 19);
             this.deleteSelectedRowButton.Name = "deleteSelectedRowButton";
             this.deleteSelectedRowButton.Size = new System.Drawing.Size(251, 36);
             this.deleteSelectedRowButton.TabIndex = 0;
@@ -235,11 +239,30 @@ namespace KP_App
             this.deleteSelectedRowButton.UseVisualStyleBackColor = false;
             this.deleteSelectedRowButton.Click += new System.EventHandler(this.deleteSelectedRowButton_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.increaseSalary);
+            this.groupBox2.Location = new System.Drawing.Point(382, 15);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(373, 177);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Увеличение ЗП";
+            // 
+            // increaseSalary
+            // 
+            this.increaseSalary.Location = new System.Drawing.Point(57, 59);
+            this.increaseSalary.Name = "increaseSalary";
+            this.increaseSalary.Size = new System.Drawing.Size(220, 37);
+            this.increaseSalary.TabIndex = 0;
+            this.increaseSalary.Text = "Увеличить зарплату";
+            this.increaseSalary.UseVisualStyleBackColor = true;
+            // 
             // KP_App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(707, 630);
+            this.ClientSize = new System.Drawing.Size(1054, 640);
             this.Controls.Add(this.splitContainer1);
             this.MinimumSize = new System.Drawing.Size(725, 677);
             this.Name = "KP_App";
@@ -252,6 +275,7 @@ namespace KP_App
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -274,6 +298,8 @@ namespace KP_App
         private System.Windows.Forms.TextBox totalPaymentTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button excelExportButton;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button increaseSalary;
     }
 }
 
