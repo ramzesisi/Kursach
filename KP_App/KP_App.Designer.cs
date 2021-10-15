@@ -35,6 +35,8 @@ namespace KP_App
             this.WorkspaceName = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.increaseSalary = new System.Windows.Forms.Button();
             this.excelExportButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.calculateTotalPaymentByWorkspace = new System.Windows.Forms.Button();
@@ -45,15 +47,15 @@ namespace KP_App
             this.label2 = new System.Windows.Forms.Label();
             this.totalPaymentTextBox = new System.Windows.Forms.TextBox();
             this.deleteSelectedRowButton = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.increaseSalary = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.increaseSalaryTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainDataGridView
@@ -125,6 +127,28 @@ namespace KP_App
             this.splitContainer1.Size = new System.Drawing.Size(1054, 640);
             this.splitContainer1.SplitterDistance = 401;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.increaseSalaryTextBox);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.increaseSalary);
+            this.groupBox2.Location = new System.Drawing.Point(382, 15);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(373, 177);
+            this.groupBox2.TabIndex = 10;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Увеличение ЗП";
+            // 
+            // increaseSalary
+            // 
+            this.increaseSalary.Location = new System.Drawing.Point(136, 58);
+            this.increaseSalary.Name = "increaseSalary";
+            this.increaseSalary.Size = new System.Drawing.Size(171, 22);
+            this.increaseSalary.TabIndex = 0;
+            this.increaseSalary.Text = "Увеличить зарплату";
+            this.increaseSalary.UseVisualStyleBackColor = true;
+            this.increaseSalary.Click += new System.EventHandler(this.increaseSalary_Click);
             // 
             // excelExportButton
             // 
@@ -239,24 +263,21 @@ namespace KP_App
             this.deleteSelectedRowButton.UseVisualStyleBackColor = false;
             this.deleteSelectedRowButton.Click += new System.EventHandler(this.deleteSelectedRowButton_Click);
             // 
-            // groupBox2
+            // label4
             // 
-            this.groupBox2.Controls.Add(this.increaseSalary);
-            this.groupBox2.Location = new System.Drawing.Point(382, 15);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(373, 177);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Увеличение ЗП";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Проценты";
             // 
-            // increaseSalary
+            // increaseSalaryTextBox
             // 
-            this.increaseSalary.Location = new System.Drawing.Point(57, 59);
-            this.increaseSalary.Name = "increaseSalary";
-            this.increaseSalary.Size = new System.Drawing.Size(220, 37);
-            this.increaseSalary.TabIndex = 0;
-            this.increaseSalary.Text = "Увеличить зарплату";
-            this.increaseSalary.UseVisualStyleBackColor = true;
+            this.increaseSalaryTextBox.Location = new System.Drawing.Point(18, 58);
+            this.increaseSalaryTextBox.Name = "increaseSalaryTextBox";
+            this.increaseSalaryTextBox.Size = new System.Drawing.Size(100, 22);
+            this.increaseSalaryTextBox.TabIndex = 2;
             // 
             // KP_App
             // 
@@ -264,7 +285,7 @@ namespace KP_App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1054, 640);
             this.Controls.Add(this.splitContainer1);
-            this.MinimumSize = new System.Drawing.Size(725, 677);
+            this.MinimumSize = new System.Drawing.Size(1072, 687);
             this.Name = "KP_App";
             this.Text = "Завод ";
             this.Load += new System.EventHandler(this.KP_App_Load);
@@ -273,9 +294,10 @@ namespace KP_App
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -300,6 +322,8 @@ namespace KP_App
         private System.Windows.Forms.Button excelExportButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button increaseSalary;
+        private System.Windows.Forms.TextBox increaseSalaryTextBox;
+        private System.Windows.Forms.Label label4;
     }
 }
 
