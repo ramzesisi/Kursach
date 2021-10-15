@@ -142,9 +142,9 @@ namespace KP_App
             // 
             // increaseSalary
             // 
-            this.increaseSalary.Location = new System.Drawing.Point(136, 58);
+            this.increaseSalary.Location = new System.Drawing.Point(134, 31);
             this.increaseSalary.Name = "increaseSalary";
-            this.increaseSalary.Size = new System.Drawing.Size(171, 22);
+            this.increaseSalary.Size = new System.Drawing.Size(171, 49);
             this.increaseSalary.TabIndex = 0;
             this.increaseSalary.Text = "Увеличить зарплату";
             this.increaseSalary.UseVisualStyleBackColor = true;
