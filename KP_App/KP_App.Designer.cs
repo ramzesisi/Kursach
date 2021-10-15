@@ -48,7 +48,8 @@ namespace KP_App
             this.totalPaymentTextBox = new System.Windows.Forms.TextBox();
             this.deleteSelectedRowButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.increaseSalaryTextBox = new System.Windows.Forms.TextBox();
+            this.percentSalaryTextBox = new System.Windows.Forms.TextBox();
+            this.decreaseSalaryButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -130,7 +131,8 @@ namespace KP_App
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.increaseSalaryTextBox);
+            this.groupBox2.Controls.Add(this.decreaseSalaryButton);
+            this.groupBox2.Controls.Add(this.percentSalaryTextBox);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.increaseSalary);
             this.groupBox2.Location = new System.Drawing.Point(382, 15);
@@ -138,16 +140,18 @@ namespace KP_App
             this.groupBox2.Size = new System.Drawing.Size(373, 177);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Увеличение ЗП";
+            this.groupBox2.Text = "Увеличение/уменьшение ЗП";
             // 
             // increaseSalary
             // 
+            this.increaseSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.increaseSalary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.increaseSalary.Location = new System.Drawing.Point(134, 31);
             this.increaseSalary.Name = "increaseSalary";
             this.increaseSalary.Size = new System.Drawing.Size(171, 49);
             this.increaseSalary.TabIndex = 0;
             this.increaseSalary.Text = "Увеличить зарплату";
-            this.increaseSalary.UseVisualStyleBackColor = true;
+            this.increaseSalary.UseVisualStyleBackColor = false;
             this.increaseSalary.Click += new System.EventHandler(this.increaseSalary_Click);
             // 
             // excelExportButton
@@ -165,7 +169,7 @@ namespace KP_App
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox1.Controls.Add(this.calculateTotalPaymentByWorkspace);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.workspaceComboBox);
@@ -272,12 +276,24 @@ namespace KP_App
             this.label4.TabIndex = 1;
             this.label4.Text = "Проценты";
             // 
-            // increaseSalaryTextBox
+            // percentSalaryTextBox
             // 
-            this.increaseSalaryTextBox.Location = new System.Drawing.Point(18, 58);
-            this.increaseSalaryTextBox.Name = "increaseSalaryTextBox";
-            this.increaseSalaryTextBox.Size = new System.Drawing.Size(100, 22);
-            this.increaseSalaryTextBox.TabIndex = 2;
+            this.percentSalaryTextBox.Location = new System.Drawing.Point(18, 58);
+            this.percentSalaryTextBox.Name = "percentSalaryTextBox";
+            this.percentSalaryTextBox.Size = new System.Drawing.Size(100, 22);
+            this.percentSalaryTextBox.TabIndex = 2;
+            // 
+            // decreaseSalaryButton
+            // 
+            this.decreaseSalaryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.decreaseSalaryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.decreaseSalaryButton.Location = new System.Drawing.Point(134, 94);
+            this.decreaseSalaryButton.Name = "decreaseSalaryButton";
+            this.decreaseSalaryButton.Size = new System.Drawing.Size(171, 49);
+            this.decreaseSalaryButton.TabIndex = 3;
+            this.decreaseSalaryButton.Text = "Уменьшить зарплату";
+            this.decreaseSalaryButton.UseVisualStyleBackColor = false;
+            this.decreaseSalaryButton.Click += new System.EventHandler(this.decreaseSalaryButton_Click);
             // 
             // KP_App
             // 
@@ -322,8 +338,9 @@ namespace KP_App
         private System.Windows.Forms.Button excelExportButton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button increaseSalary;
-        private System.Windows.Forms.TextBox increaseSalaryTextBox;
+        private System.Windows.Forms.TextBox percentSalaryTextBox;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button decreaseSalaryButton;
     }
 }
 

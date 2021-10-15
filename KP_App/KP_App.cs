@@ -85,12 +85,37 @@ namespace KP_App
         {
             if (mainDataGridView.Rows.Count > 1)
             {
-                if (mainDataGridView.CurrentCell.ColumnIndex == 1 && increaseSalaryTextBox.Text != "")
+                if (mainDataGridView.CurrentCell.ColumnIndex == 1 && percentSalaryTextBox.Text != "")
                 {
                     decimal salary_to_increase = Convert.ToDecimal(mainDataGridView.CurrentRow.Cells[3].Value);
-                    salary_to_increase *= (Convert.ToDecimal(increaseSalaryTextBox.Text)/100) + 1;
+                    salary_to_increase *= (Convert.ToDecimal(percentSalaryTextBox.Text)/100) + 1;
                     salary_to_increase = Math.Round(salary_to_increase, 2);
                     mainDataGridView.CurrentRow.Cells[3].Value = salary_to_increase;
+                }
+                else
+                {
+                    MessageBox.Show("Выберите фамилию рабочего и введите проценты");
+                }
+            }
+        }
+
+        private void decreaseSalaryButton_Click(object sender, EventArgs e)
+        {
+            if (mainDataGridView.Rows.Count > 1)
+            {
+                if (mainDataGridView.CurrentCell.ColumnIndex == 1 && percentSalaryTextBox.Text != "")
+                {
+                    decimal salary_to_decrease = Convert.ToDecimal(mainDataGridView.CurrentRow.Cells[3].Value);
+                    salary_to_decrease *= 1 - (Convert.ToDecimal(percentSalaryTextBox.Text) / 100);
+                    salary_to_decrease = Math.Round(salary_to_decrease, 2);
+                    if (Convert.ToInt32(salary_to_decrease) < 11114)
+                    {
+                        MessageBox.Show("Попытка уменьшить зарплату меньше прожиточного минимума (11114 рублей)");
+                    }
+                    else
+                    {
+                        mainDataGridView.CurrentRow.Cells[3].Value = salary_to_decrease;
+                    }
                 }
                 else
                 {
