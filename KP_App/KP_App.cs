@@ -12,7 +12,7 @@ namespace KP_App
 {
     public partial class KP_App : Form
     {
-        private readonly string excelSavePath = @"E:\лабы и курсач\2 курс\ТРПО\Курсовой проект\KP_App";
+        private readonly string excelSavePath = @"C:\Users\ramze\Desktop\Новая папка (2)\KP_App";
         //Проверка подключение гитхаба
         public KP_App()
         {
@@ -59,8 +59,8 @@ namespace KP_App
             Microsoft.Office.Interop.Excel.Workbook workBookExcel = appExcel.Workbooks.Add(Type.Missing);
             Microsoft.Office.Interop.Excel.Worksheet worksheetExcel = null;
             appExcel.Visible = true;
-            worksheetExcel = workBookExcel.Sheets[1];
-            worksheetExcel = workBookExcel.ActiveSheet;
+            worksheetExcel = (Microsoft.Office.Interop.Excel.Worksheet)workBookExcel.Sheets[1];
+            worksheetExcel = (Microsoft.Office.Interop.Excel.Worksheet)workBookExcel.ActiveSheet;
             worksheetExcel.Name = "Таблица 1";
             //Копируем заголовки
             for (int i = 1; i < mainDataGridView.Columns.Count + 1; i++)
@@ -122,6 +122,16 @@ namespace KP_App
                     MessageBox.Show("Выберите фамилию рабочего и введите проценты");
                 }
             }
+        }
+
+        private void mainDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

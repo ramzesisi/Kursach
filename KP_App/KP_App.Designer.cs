@@ -29,6 +29,7 @@ namespace KP_App
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KP_App));
             this.mainDataGridView = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Surname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,6 +37,9 @@ namespace KP_App
             this.Payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.decreaseSalaryButton = new System.Windows.Forms.Button();
+            this.percentSalaryTextBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.increaseSalary = new System.Windows.Forms.Button();
             this.excelExportButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -47,9 +51,6 @@ namespace KP_App
             this.label2 = new System.Windows.Forms.Label();
             this.totalPaymentTextBox = new System.Windows.Forms.TextBox();
             this.deleteSelectedRowButton = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.percentSalaryTextBox = new System.Windows.Forms.TextBox();
-            this.decreaseSalaryButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -75,6 +76,7 @@ namespace KP_App
             this.mainDataGridView.RowTemplate.Height = 24;
             this.mainDataGridView.Size = new System.Drawing.Size(1054, 401);
             this.mainDataGridView.TabIndex = 0;
+            this.mainDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mainDataGridView_CellContentClick);
             // 
             // ID
             // 
@@ -121,6 +123,7 @@ namespace KP_App
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("splitContainer1.Panel2.BackgroundImage")));
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer1.Panel2.Controls.Add(this.excelExportButton);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox1);
@@ -137,18 +140,46 @@ namespace KP_App
             this.groupBox2.Controls.Add(this.increaseSalary);
             this.groupBox2.Location = new System.Drawing.Point(382, 15);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(373, 177);
+            this.groupBox2.Size = new System.Drawing.Size(227, 131);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Увеличение/уменьшение ЗП";
             // 
+            // decreaseSalaryButton
+            // 
+            this.decreaseSalaryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.decreaseSalaryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.decreaseSalaryButton.Location = new System.Drawing.Point(119, 59);
+            this.decreaseSalaryButton.Name = "decreaseSalaryButton";
+            this.decreaseSalaryButton.Size = new System.Drawing.Size(101, 49);
+            this.decreaseSalaryButton.TabIndex = 3;
+            this.decreaseSalaryButton.Text = "Уменьшить зарплату";
+            this.decreaseSalaryButton.UseVisualStyleBackColor = false;
+            this.decreaseSalaryButton.Click += new System.EventHandler(this.decreaseSalaryButton_Click);
+            // 
+            // percentSalaryTextBox
+            // 
+            this.percentSalaryTextBox.Location = new System.Drawing.Point(96, 31);
+            this.percentSalaryTextBox.Name = "percentSalaryTextBox";
+            this.percentSalaryTextBox.Size = new System.Drawing.Size(100, 22);
+            this.percentSalaryTextBox.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Проценты";
+            // 
             // increaseSalary
             // 
-            this.increaseSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.increaseSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.increaseSalary.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.increaseSalary.Location = new System.Drawing.Point(134, 31);
+            this.increaseSalary.Location = new System.Drawing.Point(18, 59);
             this.increaseSalary.Name = "increaseSalary";
-            this.increaseSalary.Size = new System.Drawing.Size(171, 49);
+            this.increaseSalary.Size = new System.Drawing.Size(95, 49);
             this.increaseSalary.TabIndex = 0;
             this.increaseSalary.Text = "Увеличить зарплату";
             this.increaseSalary.UseVisualStyleBackColor = false;
@@ -157,9 +188,9 @@ namespace KP_App
             // excelExportButton
             // 
             this.excelExportButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.excelExportButton.BackColor = System.Drawing.Color.Lime;
+            this.excelExportButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.excelExportButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.excelExportButton.Location = new System.Drawing.Point(775, 140);
+            this.excelExportButton.Location = new System.Drawing.Point(615, 61);
             this.excelExportButton.Name = "excelExportButton";
             this.excelExportButton.Size = new System.Drawing.Size(251, 36);
             this.excelExportButton.TabIndex = 9;
@@ -180,31 +211,33 @@ namespace KP_App
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox1.Location = new System.Drawing.Point(12, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 177);
+            this.groupBox1.Size = new System.Drawing.Size(364, 131);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Выплаты заработной платы";
             // 
             // calculateTotalPaymentByWorkspace
             // 
-            this.calculateTotalPaymentByWorkspace.BackColor = System.Drawing.SystemColors.Highlight;
+            this.calculateTotalPaymentByWorkspace.BackColor = System.Drawing.Color.Fuchsia;
             this.calculateTotalPaymentByWorkspace.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.calculateTotalPaymentByWorkspace.Location = new System.Drawing.Point(9, 58);
+            this.calculateTotalPaymentByWorkspace.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.calculateTotalPaymentByWorkspace.Location = new System.Drawing.Point(205, 15);
             this.calculateTotalPaymentByWorkspace.Name = "calculateTotalPaymentByWorkspace";
-            this.calculateTotalPaymentByWorkspace.Size = new System.Drawing.Size(337, 38);
+            this.calculateTotalPaymentByWorkspace.Size = new System.Drawing.Size(130, 49);
             this.calculateTotalPaymentByWorkspace.TabIndex = 1;
-            this.calculateTotalPaymentByWorkspace.Text = "Вычислиты выплаты по цеху";
+            this.calculateTotalPaymentByWorkspace.Text = "Вычислить выплаты по цеху";
             this.calculateTotalPaymentByWorkspace.UseVisualStyleBackColor = false;
             this.calculateTotalPaymentByWorkspace.Click += new System.EventHandler(this.calculateTotalPaymentByWorkspace_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 137);
+            this.label3.Location = new System.Drawing.Point(6, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(196, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Среднемесячный заработок";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // workspaceComboBox
             // 
@@ -215,17 +248,17 @@ namespace KP_App
             "Переработка отходов",
             "Сварочный",
             "Токарный"});
-            this.workspaceComboBox.Location = new System.Drawing.Point(207, 28);
+            this.workspaceComboBox.Location = new System.Drawing.Point(45, 28);
             this.workspaceComboBox.Name = "workspaceComboBox";
-            this.workspaceComboBox.Size = new System.Drawing.Size(139, 24);
+            this.workspaceComboBox.Size = new System.Drawing.Size(123, 24);
             this.workspaceComboBox.TabIndex = 2;
             // 
             // averageMonthPaymentTextBox
             // 
-            this.averageMonthPaymentTextBox.Location = new System.Drawing.Point(207, 132);
+            this.averageMonthPaymentTextBox.Location = new System.Drawing.Point(208, 101);
             this.averageMonthPaymentTextBox.Name = "averageMonthPaymentTextBox";
             this.averageMonthPaymentTextBox.ReadOnly = true;
-            this.averageMonthPaymentTextBox.Size = new System.Drawing.Size(139, 22);
+            this.averageMonthPaymentTextBox.Size = new System.Drawing.Size(127, 22);
             this.averageMonthPaymentTextBox.TabIndex = 6;
             // 
             // label1
@@ -240,7 +273,7 @@ namespace KP_App
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 110);
+            this.label2.Location = new System.Drawing.Point(18, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 17);
             this.label2.TabIndex = 5;
@@ -248,52 +281,24 @@ namespace KP_App
             // 
             // totalPaymentTextBox
             // 
-            this.totalPaymentTextBox.Location = new System.Drawing.Point(207, 107);
+            this.totalPaymentTextBox.Location = new System.Drawing.Point(208, 70);
             this.totalPaymentTextBox.Name = "totalPaymentTextBox";
             this.totalPaymentTextBox.ReadOnly = true;
-            this.totalPaymentTextBox.Size = new System.Drawing.Size(139, 22);
+            this.totalPaymentTextBox.Size = new System.Drawing.Size(127, 22);
             this.totalPaymentTextBox.TabIndex = 4;
             // 
             // deleteSelectedRowButton
             // 
             this.deleteSelectedRowButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteSelectedRowButton.BackColor = System.Drawing.Color.Red;
+            this.deleteSelectedRowButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.deleteSelectedRowButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.deleteSelectedRowButton.Location = new System.Drawing.Point(775, 19);
+            this.deleteSelectedRowButton.Location = new System.Drawing.Point(615, 19);
             this.deleteSelectedRowButton.Name = "deleteSelectedRowButton";
             this.deleteSelectedRowButton.Size = new System.Drawing.Size(251, 36);
             this.deleteSelectedRowButton.TabIndex = 0;
             this.deleteSelectedRowButton.Text = "Удалить выбранный ряд";
             this.deleteSelectedRowButton.UseVisualStyleBackColor = false;
             this.deleteSelectedRowButton.Click += new System.EventHandler(this.deleteSelectedRowButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 17);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Проценты";
-            // 
-            // percentSalaryTextBox
-            // 
-            this.percentSalaryTextBox.Location = new System.Drawing.Point(18, 58);
-            this.percentSalaryTextBox.Name = "percentSalaryTextBox";
-            this.percentSalaryTextBox.Size = new System.Drawing.Size(100, 22);
-            this.percentSalaryTextBox.TabIndex = 2;
-            // 
-            // decreaseSalaryButton
-            // 
-            this.decreaseSalaryButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.decreaseSalaryButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.decreaseSalaryButton.Location = new System.Drawing.Point(134, 94);
-            this.decreaseSalaryButton.Name = "decreaseSalaryButton";
-            this.decreaseSalaryButton.Size = new System.Drawing.Size(171, 49);
-            this.decreaseSalaryButton.TabIndex = 3;
-            this.decreaseSalaryButton.Text = "Уменьшить зарплату";
-            this.decreaseSalaryButton.UseVisualStyleBackColor = false;
-            this.decreaseSalaryButton.Click += new System.EventHandler(this.decreaseSalaryButton_Click);
             // 
             // KP_App
             // 
